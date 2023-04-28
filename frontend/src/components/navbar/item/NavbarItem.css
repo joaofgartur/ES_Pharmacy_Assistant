@@ -1,0 +1,8 @@
+.navbar-item {
+    text-decoration: none;
+    background-color: var(--teste);
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: white;
+    margin-right: 2rem;
+}
