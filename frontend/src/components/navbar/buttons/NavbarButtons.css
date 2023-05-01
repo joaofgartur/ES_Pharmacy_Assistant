@@ -1,0 +1,9 @@
+.navbar-button {
+    border-radius: 60px;
+    border: 1px solid var(--color-light-gray);
+}
+
+.button-B {
+    background-color: var(--color-gradient1-1);
+    color: var(--color-white);
+}

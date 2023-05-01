@@ -12,4 +12,4 @@ function NavbarItem(props: INavbarItem) {
     )
 }
 
-export default NavbarItem
+export default NavbarItem;

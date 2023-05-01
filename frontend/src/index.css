@@ -1,6 +1,14 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
+  /* colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark-gray: #5b5b5b;
+  --color-light-gray: #c4c4c4;
+  --color-gradient1-1: #3082fe;
+  --color-gradient1-2: #5b00ee;
+  --gradient-blue: linear-gradient(to left, var(--color-gradient1-1), var(--color-gradient1-2));
   --teste: #e3613a;
 
   font-synthesis: none;
