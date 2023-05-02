@@ -32,7 +32,7 @@ function Navbar() {
                         user.length ?
                             <NavbarUser to={"/user"} title={user}/>
                             :
-                            <NavbarButtonA to={"/signup"} title={"Sign Up"}/>
+                            <NavbarButtonA to={"/register"} title={"Sign Up"}/>
                     }
                     {
                         user.length ?

@@ -1,0 +1,27 @@
+
+
+.form-item-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+input {
+    height: 2rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+h3 {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-light-gray);
+}
