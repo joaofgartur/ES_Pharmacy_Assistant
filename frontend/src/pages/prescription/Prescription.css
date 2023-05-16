@@ -1,0 +1,79 @@
+.prescription {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prescription-container {
+    width: 90%;
+    height: 80%;
+    background-color: var(--color-light-gray2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.prescription-container .left {
+    height: 90%;
+    width: 30%;
+}
+
+.prescription-container .right {
+    height: 90%;
+    width: 60%;
+}
+
+.prescription-container .prescription-details {
+    background-color: var(--color-white);
+    width: 100%;
+    height: 85%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.prescription-container .prescription-details .title {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.prescription-container .prescription-details .title h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.prescription-container .prescription-details .title .bar {
+    border-bottom: 1px solid var(--color-black);
+    width: 100%;
+}
+
+.prescription-container .prescription-details .table-sect {
+    width: 90%;
+    height: 70%;
+    overflow: auto;
+}
+
+.prescription-container .button-sect {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.prescription-container .button-sect .button-B {
+    width: 10rem;
+    height: 3rem;
+    margin-right: 1.2rem;
+}

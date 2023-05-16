@@ -6,7 +6,7 @@ export const validationPipe = async (schema: new () => {}, requestObject: object
     const transformedClass: any = plainToInstance(schema, requestObject);
     const errors = await validate(transformedClass);
     if (errors.length > 0) {
-        return errors;
+        return { success: false, errors };
     }
-    return false;
+    return { success: true, transformedClass };
 };

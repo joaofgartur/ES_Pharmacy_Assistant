@@ -1,8 +1,8 @@
 import './Navbar.css'
 import NavbarItem from "./item/NavbarItem.tsx";
 import NavbarLogo from "./logo/NavbarLogo.tsx";
-import NavbarButtonA from "./buttons/NavbarButtonA.tsx";
-import NavbarButtonB from "./buttons/NavbarButtonB.tsx";
+import ButtonA from "./buttons/ButtonA.tsx";
+import ButtonB from "./buttons/ButtonB.tsx";
 import NavbarUser from "./user/NavbarUser.tsx";
 import {useEffect, useState} from "react";
 
@@ -22,7 +22,7 @@ function Navbar() {
                 <div className={"right-content"}>
                     {
                         user.length ?
-                            <NavbarItem to={"/prescribe"} title={"Prescribe"} />
+                            <NavbarItem to={"/prescription"} title={"Scan QR"} />
                             :
                             undefined
                     }
@@ -32,13 +32,13 @@ function Navbar() {
                         user.length ?
                             <NavbarUser to={"/user"} title={user}/>
                             :
-                            <NavbarButtonA to={"/register"} title={"Sign Up"}/>
+                            <ButtonA to={"/register"} title={"Sign Up"}/>
                     }
                     {
                         user.length ?
                             undefined
                             :
-                            <NavbarButtonB to={"/login"} title={"Login"}/>
+                            <ButtonB to={"/login"} title={"Login"}/>
                     }
                 </div>
             </div>

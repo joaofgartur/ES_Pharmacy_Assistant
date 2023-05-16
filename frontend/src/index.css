@@ -1,15 +1,18 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Outfit', serif;
 
   /* colors */
   --color-black: #000000;
   --color-white: #ffffff;
   --color-dark-gray: #5b5b5b;
   --color-light-gray: #c4c4c4;
+  --color-light-gray2: #4d4d4d15;
   --color-gradient1-1: #3082fe;
   --color-gradient1-2: #5b00ee;
   --gradient-blue: linear-gradient(to left, var(--color-gradient1-1), var(--color-gradient1-2));
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --teste: #e3613a;
+  --black: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,4 +24,18 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+.align-right {
+  margin-left: auto;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 1000;
+  font-size: xx-large;
+}
+
+.color-black {
+  color: var(--black);
 }

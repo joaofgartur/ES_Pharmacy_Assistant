@@ -1,10 +1,14 @@
 import "./AuthForm.css"
-import FormUser from "./user/FormUser.tsx";
-import FormEmail from "./email/FormEmail.tsx";
-import FormPassword from "./password/FormPassword.tsx";
 import IForm from "./IForm.ts";
+import React from "react";
+import {useNavigate} from "react-router-dom";
+import {faLock} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
+import FormItem from "./item/FormItem.tsx";
 
 function AuthForm(props: IForm) {
+    const navigate = useNavigate();
 
     const handleLogin = (event : React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -18,8 +22,10 @@ function AuthForm(props: IForm) {
         const email = target.email.value; // typechecks!
         const password = target.password.value; // typechecks!
 
-        console.log(email)
-        console.log(password)
+        console.log(email);
+        console.log(password);
+
+        navigate("/");
     }
 
     const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
@@ -38,9 +44,11 @@ function AuthForm(props: IForm) {
         const email = target.email.value; // typechecks!
         const password = target.password.value; // typechecks!
 
-        console.log(username)
-        console.log(email)
-        console.log(password)
+        console.log(username);
+        console.log(email);
+        console.log(password);
+
+        navigate("/");
     }
 
     return (
@@ -50,18 +58,18 @@ function AuthForm(props: IForm) {
                 (props.type == "register") ?
                     <form onSubmit={(e) => handleSubmit(e)}>
                         <div className={"form-content"}>
-                            <FormUser input_type={"text"} title={"Username"} placeholder={"Username"} name={"username"}/>
-                            <FormEmail input_type={"email"} title={"Email"} placeholder={"Email"} name={"email"}/>
-                            <FormPassword input_type={"password"} title={"Password"} placeholder={"Password"} name={"password"}/>
-                            <FormPassword input_type={"password"} title={"Confirm password"} placeholder={"Password"} name={"password2"}/>
+                            <FormItem title={"Username"} input_type={"text"} placeholder={"Username"} name={"username"} icon={faUser}/>
+                            <FormItem title={"Email"} input_type={"email"} placeholder={"Email"} name={"email"} icon={faEnvelope}/>
+                            <FormItem title={"Password"} input_type={"password"} placeholder={"Password"} name={"password"} icon={faLock}/>
+                            <FormItem title={"Confirm password"} input_type={"password"} placeholder={"Password"} name={"password2"} icon={faLock}/>
                         </div>
                         <button className={"button"}>Sign Up</button>
                     </form>
                 :
                     <form onSubmit={(e) => handleLogin(e)}>
                         <div className={"form-content"}>
-                            <FormEmail input_type={"email"} title={"Email"} placeholder={"Email"} name={"email"}/>
-                            <FormPassword input_type={"password"} title={"Password"} placeholder={"Password"} name={"password"}/>
+                            <FormItem title={"Email"} input_type={"email"} placeholder={"Email"} name={"email"} icon={faEnvelope}/>
+                            <FormItem title={"Password"} input_type={"password"} placeholder={"Password"} name={"password"} icon={faLock}/>
                         </div>
                         <button className={"button"}>Sign Up</button>
                     </form>

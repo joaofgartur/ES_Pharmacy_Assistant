@@ -1,5 +1,5 @@
 import "./Home.css"
-import NavbarButtonB from "../../components/navbar/buttons/NavbarButtonB.tsx";
+import ButtonB from "../../components/navbar/buttons/ButtonB.tsx";
 
 function Home() {
     return (
@@ -16,7 +16,7 @@ function Home() {
                         culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
-                <NavbarButtonB to={"/more"} title={"Learn more"}/>
+                <ButtonB to={"/more"} title={"Learn more"}/>
             </div>
         </div>
     )
