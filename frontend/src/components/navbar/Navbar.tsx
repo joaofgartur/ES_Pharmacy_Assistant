@@ -10,7 +10,7 @@ function Navbar() {
     const [user , setUser] = useState("");
 
     useEffect(() => {
-        setUser("asd");
+        setUser("");
     }, []);
 
     return (
