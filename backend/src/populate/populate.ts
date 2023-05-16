@@ -9,7 +9,7 @@ async function populate() {
           name: 'Samuel Carinhas',
           email: 'samuelsantos.c.2001@gmail.com',
           password: await argon2.hash('teste123')
-        },
+        }
     });
 
     console.log(`Created ${user}`)
