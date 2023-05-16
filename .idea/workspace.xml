@@ -5,17 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ES_Pharmacy_Assistant.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/middlewares/validation.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/pipes/validation.pipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routes/auth/auth.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routes/auth/auth.route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/ClientDetails.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/ClientDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/IClientDetails.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/item/ClientDetailsItem.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/item/ClientDetailsItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/client-details/item/IClientDetailsItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/ITable.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/header/ITableHeader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/row/ITableRow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/IFormsItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/IFormsItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/NavbarButtonA.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/ButtonA.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/NavbarButtonB.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/ButtonB.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +70,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/carinhas/Documents/UC/ES/ES_Pharmacy_Assistant&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/Mestrado/ES/Assignment/Stage_II/ES_Pharmacy_Assistant/frontend/src/components/client-details&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -61,7 +78,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/carinhas/Documents/UC/ES/ES_Pharmacy_Assistant/backend/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\Mestrado\\ES\\Assignment\\Stage_II\\ES_Pharmacy_Assistant\\backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -72,6 +89,11 @@
         <entry key="com.haulmont.rcb.reactInspector" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\client-details" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,6 +109,10 @@
       <workItem from="1683045272042" duration="4775000" />
       <workItem from="1683288362241" duration="502000" />
       <workItem from="1683288873386" duration="2445000" />
+      <workItem from="1683886492972" duration="5310000" />
+      <workItem from="1684184558195" duration="898000" />
+      <workItem from="1684226554336" duration="2707000" />
+      <workItem from="1684230262171" duration="6472000" />
     </task>
     <servers />
   </component>

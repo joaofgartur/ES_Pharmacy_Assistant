@@ -1,0 +1,24 @@
+.client-details-item {
+    width: 90%;
+    height: 3rem;
+    background-color: var(--color-light-gray2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    border: 1px solid var(--color-light-gray);
+    margin-top: 1.2rem;
+}
+
+.client-details-item .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--color-dark-gray);
+    padding-left: 1rem;
+}
+
+.client-details-item p {
+    padding-left: 1rem;
+    width: 80%;
+}

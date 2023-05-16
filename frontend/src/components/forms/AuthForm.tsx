@@ -3,8 +3,11 @@ import FormUser from "./user/FormUser.tsx";
 import FormEmail from "./email/FormEmail.tsx";
 import FormPassword from "./password/FormPassword.tsx";
 import IForm from "./IForm.ts";
+import React from "react";
+import {useNavigate} from "react-router-dom";
 
 function AuthForm(props: IForm) {
+    const navigate = useNavigate();
 
     const handleLogin = (event : React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -18,8 +21,10 @@ function AuthForm(props: IForm) {
         const email = target.email.value; // typechecks!
         const password = target.password.value; // typechecks!
 
-        console.log(email)
-        console.log(password)
+        console.log(email);
+        console.log(password);
+
+        navigate("/");
     }
 
     const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
@@ -38,9 +43,11 @@ function AuthForm(props: IForm) {
         const email = target.email.value; // typechecks!
         const password = target.password.value; // typechecks!
 
-        console.log(username)
-        console.log(email)
-        console.log(password)
+        console.log(username);
+        console.log(email);
+        console.log(password);
+
+        navigate("/");
     }
 
     return (

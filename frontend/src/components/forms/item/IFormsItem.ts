@@ -5,4 +5,4 @@ interface IFormItem {
     name: string;
 }
 
-export default IFormItem
+export default IFormItem;
