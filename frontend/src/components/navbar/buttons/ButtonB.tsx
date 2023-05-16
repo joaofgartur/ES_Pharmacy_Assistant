@@ -2,9 +2,9 @@ import "./NavbarButtons.css"
 import {Link} from "react-router-dom";
 import INavbarButton from "./INavbarButton.ts";
 
-function NavbarButtonA(props: INavbarButton) {
+function ButtonB(props: INavbarButton) {
     return (
-        <Link to={props.to} className={"navbar-item navbar-button button-A"}>
+        <Link to={props.to} className={"navbar-item navbar-button button-B"}>
             <div className={"navbar-item-content"}>
                 { props.title }
             </div>
@@ -12,4 +12,4 @@ function NavbarButtonA(props: INavbarButton) {
     )
 }
 
-export default NavbarButtonA;
+export default ButtonB;

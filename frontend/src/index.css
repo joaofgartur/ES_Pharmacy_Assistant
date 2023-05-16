@@ -6,9 +6,11 @@
   --color-white: #ffffff;
   --color-dark-gray: #5b5b5b;
   --color-light-gray: #c4c4c4;
+  --color-light-gray2: #4d4d4d15;
   --color-gradient1-1: #3082fe;
   --color-gradient1-2: #5b00ee;
   --gradient-blue: linear-gradient(to left, var(--color-gradient1-1), var(--color-gradient1-2));
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --teste: #e3613a;
   --black: #000000;
 

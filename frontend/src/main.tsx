@@ -5,6 +5,7 @@ import PageContainer from "./containers/page/PageContainer.tsx";
 import Home from "./pages/home/Home.tsx";
 import Registration from "./pages/registration/Registration.tsx";
 import Login from "./pages/login/Login.tsx";
+import Prescription from "./pages/prescription/Prescription.tsx";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
@@ -22,6 +23,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path={'/login'} element={
                 <PageContainer>
                     <Login/>
+                </PageContainer>
+            }/>
+            <Route path={'/prescription'} element={
+                <PageContainer>
+                    <Prescription/>
                 </PageContainer>
             }/>
         </Routes>
