@@ -3,10 +3,10 @@ import {IsEmail, IsString} from "class-validator";
 class LoginDTO {
 
     @IsEmail()
-    email: string;
+    email: string
 
     @IsString()
-    password: string;
+    password: string
 }
 
 export default LoginDTO

@@ -5,10 +5,9 @@ import LoginDTO from "./auth.dto";
 const router = express.Router()
 
 router.post('/login', validationMiddleware(LoginDTO), (req, res) => {
-    let email = req.body.email
-    let password = req.body.password
+    let user: LoginDTO = res.locals.transformedClass
 
-    let token = jsonwebtoken.sign({ email }, 'secret')
+    let token = jsonwebtoken.sign({ email: user.email }, process.env.JWT_SECRET)
 
     res.status(200).json({ token })
 })
