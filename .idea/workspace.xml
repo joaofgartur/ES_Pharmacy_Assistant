@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/buttons/color-button/ColorButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/color-button/ColorButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/buttons/Buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/Buttons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +76,7 @@
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\client-details" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\forms" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-color" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-icon" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\SimpleButton" />
@@ -96,7 +101,7 @@
       <workItem from="1684184558195" duration="898000" />
       <workItem from="1684226554336" duration="2707000" />
       <workItem from="1684230262171" duration="7459000" />
-      <workItem from="1684314781714" duration="6710000" />
+      <workItem from="1684314781714" duration="9312000" />
     </task>
     <servers />
   </component>

@@ -53,7 +53,8 @@ function AuthForm(props: IForm) {
 
     return (
         <div className={"form"}>
-            <img src="https://p7.hiclipart.com/preview/435/63/646/%E8%AA%BF%E5%89%A4-pharmacist-physician-pharmacy-medical-prescription-pharmacist.jpg" alt="Lamp" />
+
+            <div className={"image"}/>
             {
                 (props.type == "register") ?
                     <form onSubmit={(e) => handleSubmit(e)}>

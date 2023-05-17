@@ -38,6 +38,7 @@
 .home-container h2 {
     font-size: 4rem;
     font-weight: 700;
+    text-shadow: var(--box-shadow);
 }
 
 .home-container p {
@@ -52,4 +53,5 @@
     width: 10rem;
     height: 4rem;
     font-weight: 600;
+    box-shadow: var(--box-shadow);
 }
