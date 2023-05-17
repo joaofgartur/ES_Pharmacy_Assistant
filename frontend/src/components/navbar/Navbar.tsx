@@ -51,7 +51,7 @@ function Navbar() {
                         undefined
                         :
                         <NavbarItem to={"/login"} className={""}>
-                            <ColorButtonB title={"Login Up"}/>
+                            <ColorButtonB title={"Login"}/>
                         </NavbarItem>
                 }
             </div>

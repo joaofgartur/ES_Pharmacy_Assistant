@@ -16,7 +16,7 @@ function Home() {
                         culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
-                <ColorButtonB to={"/more"} title={"Learn more"}/>
+                <ColorButtonB title={"Learn more"}/>
             </div>
         </div>
     )
