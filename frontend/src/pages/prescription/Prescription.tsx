@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import ClientDetails from "../../components/client-details/ClientDetails.tsx";
 import Table from "../../components/table/Table.tsx";
 import ITableHeader from "../../components/table/header/ITableHeader.ts";
-import ButtonB from "../../components/navbar/buttons/ButtonB.tsx";
+import ColorButtonB from "../../components/buttons/color-button/ColorButtonB.tsx";
 
 function Prescription() {
     const [clientName, setClientName] = useState("");
@@ -61,7 +61,7 @@ function Prescription() {
                         </div>
                     </div>
                     <div className={"button-sect"}>
-                        <ButtonB title={"Payment"} to={"/payment"}/>
+                        <ColorButtonB title={"Payment"} to={"/payment"}/>
                     </div>
                 </div>
             </div>

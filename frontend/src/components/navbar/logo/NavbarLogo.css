@@ -1,10 +1,7 @@
 .navbar-logo {
+    color: var(--color-black);
     text-decoration: none;
-    padding-left: 2.5rem;
-    color: var(--color-black)
-}
-
-.navbar-logo-content {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
+    margin-left: 2rem;
 }

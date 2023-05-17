@@ -1,10 +1,11 @@
 import './Navbar.css'
 import NavbarItem from "./item/NavbarItem.tsx";
 import NavbarLogo from "./logo/NavbarLogo.tsx";
-import ButtonA from "./buttons/ButtonA.tsx";
-import ButtonB from "./buttons/ButtonB.tsx";
-import NavbarUser from "./user/NavbarUser.tsx";
+import ButtonA from "../buttons/color-button/ColorButtonA.tsx";
+import ColorButtonB from "../buttons/color-button/ColorButtonB.tsx";
 import {useEffect, useState} from "react";
+import SimpleButton from "../buttons/simple-button/SimpleButton.tsx";
+import ButtonWithIcon from "../buttons/button-with-icon/ButtonWithIcon.tsx";
 
 function Navbar() {
     const [user , setUser] = useState("");
@@ -16,31 +17,43 @@ function Navbar() {
     return (
         <div className={"navbar"}>
             <div className={"left"}>
-                <NavbarLogo to={"/"} title={"SmartPharmacy"} />
+                <NavbarItem to={"/"} className={""}>
+                    <NavbarLogo title={"SmartPharmacy"} />
+                </NavbarItem>
             </div>
             <div className={"right"}>
-                <div className={"right-content"}>
-                    {
-                        user.length ?
-                            <NavbarItem to={"/prescription"} title={"Scan QR"} />
-                            :
-                            undefined
-                    }
-                    <NavbarItem to={"/contact"} title={"Contact"} />
-                    <NavbarItem to={"/about"} title={"About"}/>
-                    {
-                        user.length ?
-                            <NavbarUser to={"/user"} title={user}/>
-                            :
-                            <ButtonA to={"/register"} title={"Sign Up"}/>
-                    }
-                    {
-                        user.length ?
-                            undefined
-                            :
-                            <ButtonB to={"/login"} title={"Login"}/>
-                    }
-                </div>
+                {
+                    user.length ?
+                        <NavbarItem to={"/prescription"} className={""}>
+                            <SimpleButton title={"Scan QR"}/>
+                        </NavbarItem>
+                        :
+                        undefined
+                }
+                <NavbarItem to={"/contact"} className={""}>
+                    <SimpleButton title={"Contact"}/>
+                </NavbarItem>
+                <NavbarItem to={"/about"} className={""}>
+                    <SimpleButton title={"About"}/>
+                </NavbarItem>
+                {
+                    user.length ?
+                        <NavbarItem to={"/user"} className={""}>
+                            <ButtonWithIcon title={user}/>
+                        </NavbarItem>
+                        :
+                        <NavbarItem to={"/register"} className={""}>
+                            <ButtonA title={"Sign Up"}/>
+                        </NavbarItem>
+                }
+                {
+                    user.length ?
+                        undefined
+                        :
+                        <NavbarItem to={"/login"} className={""}>
+                            <ColorButtonB title={"Login Up"}/>
+                        </NavbarItem>
+                }
             </div>
         </div>
     )

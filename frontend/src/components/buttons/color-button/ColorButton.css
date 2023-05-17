@@ -1,0 +1,11 @@
+.color-button-A {
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+}
+
+.color-button-B {
+    background-color: var(--color-gradient1-1);
+    color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+}

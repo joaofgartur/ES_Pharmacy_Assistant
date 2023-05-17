@@ -71,7 +71,7 @@ function AuthForm(props: IForm) {
                             <FormItem title={"Email"} input_type={"email"} placeholder={"Email"} name={"email"} icon={faEnvelope}/>
                             <FormItem title={"Password"} input_type={"password"} placeholder={"Password"} name={"password"} icon={faLock}/>
                         </div>
-                        <button className={"button"}>Sign Up</button>
+                        <button className={"button"}>Sign In</button>
                     </form>
             }
 

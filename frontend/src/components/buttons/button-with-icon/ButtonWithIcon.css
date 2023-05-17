@@ -1,0 +1,15 @@
+.user-button {
+    color: var(--color-gradient1-1);
+    display: flex;
+    align-items: center;
+}
+
+.user-button button {
+    color: var(--color-gradient1-1);
+    display: flex;
+    align-items: center;
+}
+
+.user-button svg {
+    height: 1.2rem;
+}

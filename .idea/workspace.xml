@@ -5,17 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/buttons/button-with-icon/ButtonWithIcon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/buttons/color-button/ColorButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/buttons/color-button/ColorButtonA.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/buttons/simple-button/SimpleButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/buttons/simple-button/SimpleButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/email/FormEmail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/email/FormEmail.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/IFormsItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/IFormsItem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/password/FormPassword.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/password/FormPassword.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/user/FormUser.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/user/FormUser.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/ButtonA.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/ButtonB.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/color-button/ColorButtonB.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/INavbarButton.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/IButton.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/buttons/NavbarButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/Buttons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/item/INavbarItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/item/INavbarItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/logo/INavbarLogo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/logo/INavbarLogo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/logo/NavbarLogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/logo/NavbarLogo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/logo/NavbarLogo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/logo/NavbarLogo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/user/INavbarUser.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/user/NavbarUser.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/user/NavbarUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/button-with-icon/ButtonWithIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -77,6 +89,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\client-details" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-color" />
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-icon" />
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\SimpleButton" />
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,6 +114,7 @@
       <workItem from="1684184558195" duration="898000" />
       <workItem from="1684226554336" duration="2707000" />
       <workItem from="1684230262171" duration="7459000" />
+      <workItem from="1684314781714" duration="5860000" />
     </task>
     <servers />
   </component>
