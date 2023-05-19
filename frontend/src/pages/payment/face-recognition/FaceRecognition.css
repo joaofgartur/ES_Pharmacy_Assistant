@@ -1,0 +1,81 @@
+.face-recognition-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-recognition {
+    width: 90%;
+    height: 80%;
+    background-color: var(--color-light-gray2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.face-recognition .left {
+    height: 90%;
+    width: 30%;
+}
+
+.face-recognition .right {
+    width: 60%;
+    height: 90%;
+    background-color: #5b00ee;
+}
+
+.face-recognition .left .camera-sect {
+    background-color: var(--color-white);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.face-recognition .left .camera-sect .camera-container {
+    margin-top: 10%;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-recognition .left .camera-container video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-recognition .left .camera-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-recognition .left .controllers {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-recognition .left .controllers svg {
+    color: var(--color-dark-gray);
+    width: 2rem;
+    height: 2rem;
+}
+
+.face-recognition .left .controllers svg:hover{
+    cursor: pointer;
+}

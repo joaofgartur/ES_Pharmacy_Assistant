@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/pop-ups/payment-selection/PaymentSelection.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/pop-ups/payment-selection/PaymentSelection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/dev/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/dev/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/dev/palette.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/dev/previews.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/dev/useInitial.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/payment/face-recognition/FaceRecognition.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/payment/face-recognition/FaceRecognition.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/ITable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/ITable.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/ITableRow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/row/ITableRow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +22,12 @@
       <list>
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="com.haulmont.rcb.palette" />
         <option value="com.haulmont.rcb.previews" />
         <option value="com.haulmont.rcb.index" />
         <option value="com.haulmont.rcb.useInitial" />
         <option value="com.haulmont.rcb.README" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -119,7 +104,9 @@
       <workItem from="1684226554336" duration="2707000" />
       <workItem from="1684230262171" duration="7459000" />
       <workItem from="1684314781714" duration="9312000" />
-      <workItem from="1684491259276" duration="6023000" />
+      <workItem from="1684491259276" duration="6159000" />
+      <workItem from="1684502315178" duration="6827000" />
+      <workItem from="1684509170706" duration="338000" />
     </task>
     <servers />
   </component>

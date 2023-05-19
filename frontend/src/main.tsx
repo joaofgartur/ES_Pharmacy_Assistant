@@ -6,6 +6,7 @@ import Home from "./pages/home/Home.tsx";
 import Registration from "./pages/registration/Registration.tsx";
 import Login from "./pages/login/Login.tsx";
 import Prescription from "./pages/prescription/Prescription.tsx";
+import FaceRecognition from "./pages/payment/face-recognition/FaceRecognition.tsx";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
@@ -28,6 +29,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path={'/prescription'} element={
                 <PageContainer>
                     <Prescription/>
+                </PageContainer>
+            }/>
+            <Route path={'/payment/faceid'} element={
+                <PageContainer>
+                    <FaceRecognition/>
                 </PageContainer>
             }/>
         </Routes>
