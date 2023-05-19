@@ -7,6 +7,7 @@ import Registration from "./pages/registration/Registration.tsx";
 import Login from "./pages/login/Login.tsx";
 import Prescription from "./pages/prescription/Prescription.tsx";
 import FaceRecognition from "./pages/payment/face-recognition/FaceRecognition.tsx";
+import Sales from "./pages/sales/Sales.tsx";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
@@ -34,6 +35,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path={'/payment/faceid'} element={
                 <PageContainer>
                     <FaceRecognition/>
+                </PageContainer>
+            }/>
+            <Route path={'/sales'} element={
+                <PageContainer>
+                    <Sales/>
                 </PageContainer>
             }/>
         </Routes>
