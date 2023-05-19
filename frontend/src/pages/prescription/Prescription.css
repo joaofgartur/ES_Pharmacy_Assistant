@@ -72,6 +72,10 @@
     justify-content: flex-end;
 }
 
+.prescription-container .button-sect a {
+    text-decoration: none;
+}
+
 .prescription-container .button-sect .button-B {
     width: 10rem;
     height: 3rem;

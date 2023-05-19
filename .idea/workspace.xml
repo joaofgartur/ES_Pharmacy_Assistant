@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/pop-ups/payment-selection/PaymentSelection.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/pop-ups/payment-selection/PaymentSelection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/dev/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/dev/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/dev/palette.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/dev/previews.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/dev/useInitial.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/buttons/Buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/buttons/Buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/item/FormItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/item/NavbarItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/ITable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/ITable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/Table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/header/TableHeader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/ITableRow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/table/row/ITableRow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/table/row/TableRow.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/prescription/Prescription.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +38,11 @@
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="com.haulmont.rcb.palette" />
+        <option value="com.haulmont.rcb.previews" />
+        <option value="com.haulmont.rcb.index" />
+        <option value="com.haulmont.rcb.useInitial" />
+        <option value="com.haulmont.rcb.README" />
       </list>
     </option>
   </component>
@@ -76,11 +93,11 @@
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\client-details" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\pages\payment\selection" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\forms" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-color" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\button-with-icon" />
       <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components\buttons\SimpleButton" />
-      <recent name="D:\Documents\Mestrado\ES\Assignment\Stage_II\ES_Pharmacy_Assistant\frontend\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,6 +119,7 @@
       <workItem from="1684226554336" duration="2707000" />
       <workItem from="1684230262171" duration="7459000" />
       <workItem from="1684314781714" duration="9312000" />
+      <workItem from="1684491259276" duration="6023000" />
     </task>
     <servers />
   </component>

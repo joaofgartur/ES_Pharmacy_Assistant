@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import ClientDetails from "../../components/client-details/ClientDetails.tsx";
 import Table from "../../components/table/Table.tsx";
 import ITableHeader from "../../components/table/header/ITableHeader.ts";
-import ColorButtonB from "../../components/buttons/color-button/ColorButtonB.tsx";
+import ITableRow from "../../components/table/row/ITableRow.ts";
+import PaymentSelection from "../../components/pop-ups/payment-selection/PaymentSelection.tsx";
 
 function Prescription() {
     const [clientName, setClientName] = useState("");
@@ -11,7 +12,7 @@ function Prescription() {
     const [email, setEmail] = useState("");
 
     const header: ITableHeader = {
-        header: ["Name", "City", "Course"]
+        header: ["Name", "Quantity", "Dosage"]
     };
 
     const body: Array<ITableRow> = [
@@ -57,11 +58,11 @@ function Prescription() {
                             <div className={"bar"}></div>
                         </div>
                         <div className={"table-sect"}>
-                            <Table header={header} body={body}/>
+                            <Table checklist_column={true} header={header} body={body}/>
                         </div>
                     </div>
                     <div className={"button-sect"}>
-                        <ColorButtonB title={"Payment"} to={"/payment"}/>
+                        <PaymentSelection/>
                     </div>
                 </div>
             </div>

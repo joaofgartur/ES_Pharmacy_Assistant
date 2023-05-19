@@ -30,12 +30,6 @@
   margin-left: auto;
 }
 
-.title {
-  font-style: normal;
-  font-weight: 1000;
-  font-size: xx-large;
-}
-
 .color-black {
   color: var(--black);
 }
