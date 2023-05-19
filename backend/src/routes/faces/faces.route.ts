@@ -33,7 +33,6 @@ router.post('/find', (req: any, res) => {
         }, (err, data) => {
             if(err)
                 res.status(500).json({ errors: [ { msg: err } ] })
-            res.status(200).json({ msg: data })
             if(data.FaceMatches && data.FaceMatches.length > 0 && data.FaceMatches[0].Face)
                 return res.status(200).json(data.FaceMatches[0])
             return res.status(404).json({ msg: 'Person not found' })

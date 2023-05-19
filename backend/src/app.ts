@@ -9,12 +9,10 @@ import cookieParser from 'cookie-parser'
 // Routes
 import auth_route from './routes/auth/auth.route'
 import qr_route from './routes/qr/qr.route'
-import populate from "./populate/populate"
-import faces_route from "./routes/faces/faces.route";
+import faces_route from "./routes/faces/faces.route"
 
 const app = express()
 const port = 3000
-
 
 app.use(cors());
 
