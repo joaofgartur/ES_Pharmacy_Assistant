@@ -49,7 +49,7 @@ function Prescription() {
         <div className={"prescription"}>
             <div className={"prescription-container"}>
                 <div className={"left"}>
-                    <ClientDetails name={clientName} email={email} phoneNumber={phoneNumber}/>
+                    <ClientDetails name={clientName} email={email} phoneNumber={phoneNumber} photo={"https://www.azquotes.com/picture-quotes/quote-bill-door-was-impressed-miss-flitworth-could-actually-give-the-word-revenue-which-had-terry-pratchett-34-91-11.jpg"}/>
                 </div>
                 <div className={"right"}>
                     <div className={"prescription-details"}>

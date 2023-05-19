@@ -22,12 +22,6 @@
     width: 30%;
 }
 
-.face-recognition .right {
-    width: 60%;
-    height: 90%;
-    background-color: #5b00ee;
-}
-
 .face-recognition .left .camera-sect {
     background-color: var(--color-white);
     height: 100%;
@@ -78,4 +72,96 @@
 
 .face-recognition .left .controllers svg:hover{
     cursor: pointer;
+}
+
+.face-recognition .right {
+    width: 60%;
+    height: 90%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.face-recognition .right .title {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    color: var(--color-dark-gray);
+    border-bottom: 1px solid var(--color-dark-gray);
+}
+
+.face-recognition .right .title h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.face-recognition .right .infos-container {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-recognition .right .infos-container .no-infos {
+    font-size: 2rem;
+}
+
+.face-recognition .right .infos-container .client-profile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.face-recognition .right .infos-container .client-profile .photo {
+    background-color: #5b00ee;
+    width: 40%;
+    height: 80%
+}
+
+.face-recognition .right .infos-container .client-profile .right-sect {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.face-recognition .right .infos-container .client-profile .right-sect .infos {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.face-recognition .right .infos-container .client-profile .right-sect .infos .info-item {
+    background-color: var(--color-light-gray2);
+    border: 1px solid var(--color-light-gray);
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.face-recognition .right .infos-container .client-profile .right-sect .controllers {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.face-recognition .right .infos-container .client-profile .right-sect a {
+    text-decoration: none
 }

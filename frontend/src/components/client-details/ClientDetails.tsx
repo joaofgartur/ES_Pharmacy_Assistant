@@ -8,7 +8,7 @@ function ClientDetails(props: IClientDetails) {
     return (
         <div className={"client-details"}>
             <div className={"top"}>
-                <img src="https://www.azquotes.com/picture-quotes/quote-bill-door-was-impressed-miss-flitworth-could-actually-give-the-word-revenue-which-had-terry-pratchett-34-91-11.jpg" alt="Lamp" />
+                <img src={props.photo} alt="Lamp" />
                 <div className={"client-name"}>
                     <h2>{props.name}</h2>
                 </div>
