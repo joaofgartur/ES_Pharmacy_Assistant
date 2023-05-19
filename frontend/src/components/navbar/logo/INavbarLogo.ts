@@ -1,5 +1,5 @@
-import INavbarItem from "../item/INavbarItem.ts";
-
-interface INavbarLogo extends INavbarItem {}
+interface INavbarLogo {
+    title: string;
+}
 
 export default INavbarLogo;

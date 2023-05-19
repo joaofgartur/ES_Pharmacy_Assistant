@@ -1,7 +1,6 @@
 import IFormsItem from "./IFormsItem.ts";
 import "./FormItem.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faLock} from "@fortawesome/free-solid-svg-icons";
 
 function FormItem(props: IFormsItem) {
     return (

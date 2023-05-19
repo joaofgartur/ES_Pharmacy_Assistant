@@ -53,7 +53,8 @@ function AuthForm(props: IForm) {
 
     return (
         <div className={"form"}>
-            <img src="https://p7.hiclipart.com/preview/435/63/646/%E8%AA%BF%E5%89%A4-pharmacist-physician-pharmacy-medical-prescription-pharmacist.jpg" alt="Lamp" />
+
+            <div className={"image"}/>
             {
                 (props.type == "register") ?
                     <form onSubmit={(e) => handleSubmit(e)}>
@@ -71,7 +72,7 @@ function AuthForm(props: IForm) {
                             <FormItem title={"Email"} input_type={"email"} placeholder={"Email"} name={"email"} icon={faEnvelope}/>
                             <FormItem title={"Password"} input_type={"password"} placeholder={"Password"} name={"password"} icon={faLock}/>
                         </div>
-                        <button className={"button"}>Sign Up</button>
+                        <button className={"button"}>Sign In</button>
                     </form>
             }
 
