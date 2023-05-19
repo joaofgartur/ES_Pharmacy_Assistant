@@ -1,5 +1,4 @@
 import express from 'express'
-import test from "../../face-recognition/face.recognition";
 const router = express.Router()
 
 function get_medicine() {
@@ -30,7 +29,6 @@ function get_medicine() {
 }
 
 router.post('/scan', async (req, res) => {
-    //test()
     return res.status(200).json({
         purchase: get_medicine()
     })
