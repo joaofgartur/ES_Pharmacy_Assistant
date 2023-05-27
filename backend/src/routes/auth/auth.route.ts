@@ -17,10 +17,11 @@ router.post('/login', validationMiddleware(LoginDTO), async (req, res) => {
         }
     });
 
-    let authorized = await argon2.verify(user.password, login.password)
+    let authorized = !user ? false : await argon2.verify(user.password, login.password)
 
     if(!authorized)
         return res.status(200).json({
+            success: false,
             errors: [
                 {
                     msg: 'Invalid credentials'
@@ -30,7 +31,11 @@ router.post('/login', validationMiddleware(LoginDTO), async (req, res) => {
 
     let token = jsonwebtoken.sign({ email: user.email }, process.env.JWT_SECRET)
 
-    res.status(200).json({ token })
+    res.status(200).json({
+        success: true,
+        email: login.email,
+        token
+    })
 })
 
 export default router

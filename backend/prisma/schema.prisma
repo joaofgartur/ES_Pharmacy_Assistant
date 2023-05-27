@@ -16,3 +16,10 @@ model Account {
   name String
   password String
 }
+
+model Client {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  phone String
+}

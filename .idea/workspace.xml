@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59488473-55ea-4136-85b8-c55dc46da73c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/sales/Sales.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/sales/Sales.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/images/alexy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/auth/AuthContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/auth/IAuthContainer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/page/AccountContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/page/IAccount.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/page/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/images/a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/images/b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/images/samuel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/populate/populate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/populate/populate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/auth/auth.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/auth/auth.route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/containers/page/PageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/containers/page/PageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/registration/Registration.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,15 +32,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="com.haulmont.rcb.palette" />
         <option value="com.haulmont.rcb.previews" />
         <option value="com.haulmont.rcb.index" />
         <option value="com.haulmont.rcb.useInitial" />
         <option value="com.haulmont.rcb.README" />
         <option value="CSS File" />
+        <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="false" />
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
     </option>
   </component>
   <component name="Git.Settings">
@@ -43,26 +65,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/Mestrado/ES/Assignment/Stage_II/ES_Pharmacy_Assistant/frontend/src/components/client-details&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\Mestrado\\ES\\Assignment\\Stage_II\\ES_Pharmacy_Assistant\\backend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Documents/Mestrado/ES/Assignment/Stage_II/ES_Pharmacy_Assistant/frontend/src/components/client-details",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\samue\\OneDrive\\Documentos\\UC\\ES_Pharmacy_Assistant\\backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -105,10 +129,15 @@
       <workItem from="1684491259276" duration="6159000" />
       <workItem from="1684502315178" duration="6827000" />
       <workItem from="1684509170706" duration="5177000" />
+      <workItem from="1685194555691" duration="138000" />
+      <workItem from="1685194723934" duration="6136000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

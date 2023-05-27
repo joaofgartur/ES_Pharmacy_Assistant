@@ -1,14 +1,36 @@
 import "./AuthForm.css"
 import IForm from "./IForm.ts";
-import React from "react";
+import React, {useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import {faLock} from "@fortawesome/free-solid-svg-icons";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import FormItem from "./item/FormItem.tsx";
+import AccountContext from "../../containers/page/AccountContext.ts";
 
 function AuthForm(props: IForm) {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const accountContext = useContext(AccountContext)
+
+    function loginPost(email: string, password: string) {
+        fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        }).then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if(res.success) {
+                    localStorage.setItem('account', JSON.stringify(res))
+                    accountContext.setAccount(res)
+                }
+            })
+    }
 
     const handleLogin = (event : React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -22,10 +44,7 @@ function AuthForm(props: IForm) {
         const email = target.email.value; // typechecks!
         const password = target.password.value; // typechecks!
 
-        console.log(email);
-        console.log(password);
-
-        navigate("/");
+        loginPost(email, password)
     }
 
     const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
