@@ -12,6 +12,7 @@ import qr_route from './routes/qr/qr.route'
 import faces_route from "./routes/faces/faces.route"
 import populate from "./populate/populate";
 
+
 const app = express()
 const port = 3000
 
@@ -26,7 +27,7 @@ app.use('/auth', auth_route)
 app.use('/qr', qr_route)
 app.use('/face', faces_route)
 
-populate()
+//populate()
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
