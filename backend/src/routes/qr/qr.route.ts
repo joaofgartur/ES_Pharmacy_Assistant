@@ -1,4 +1,7 @@
 import express from 'express'
+import { v4 as uuidv4 } from 'uuid'
+import jsonwebtoken from 'jsonwebtoken'
+import dynamodb from '../../utils/dynamodb.utils'
 const router = express.Router()
 
 function get_medicine() {
@@ -29,8 +32,47 @@ function get_medicine() {
 }
 
 router.get('/scan', async (req, res) => {
+    const medicine = get_medicine()
+    let parsed_medicine = []
+    for(let med of medicine) {
+        parsed_medicine.push({
+            M: {
+                name: {
+                    S: med.name
+                },
+                quantity: {
+                    N: `${med.quantity}`
+                },
+                price: {
+                    N: `${med.price}`
+                },
+                frequency: {
+                    S: med.frequency
+                },
+                generic: {
+                    BOOL: false
+                }
+            }
+        })
+    }
+    const uuid = uuidv4()
+    await dynamodb.put_item({
+        id: {
+            S: uuid
+        },
+        order: {
+            L: parsed_medicine
+        },
+        status: {
+            S: 'WAITING'
+        },
+        payed: {
+            BOOL: false
+        }
+    })
     return res.status(200).json({
-        purchase: get_medicine()
+        purchase: medicine,
+        payment_code: uuid
     })
 })
 

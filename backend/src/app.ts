@@ -30,7 +30,6 @@ app.use('/qr', qr_route)
 app.use('/face', faces_route)
 app.use('/payment', payment_route)
 
-
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });

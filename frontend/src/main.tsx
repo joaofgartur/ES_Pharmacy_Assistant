@@ -10,6 +10,7 @@ import FaceRecognition from "./pages/payment/face-recognition/FaceRecognition.ts
 import Sales from "./pages/sales/Sales.tsx";
 import Logout from './pages/logout/Logout.tsx';
 import FaceRecognitionNoCamera from './pages/payment/face-recognition-no-camera/FaceRecognitionNoCamera.tsx';
+import Pay from './pages/pay/Pay.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
@@ -57,6 +58,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path={'/sales'} element={
                 <PageContainer>
                     <Sales/>
+                </PageContainer>
+            }/>
+            <Route path={'/pay/*'} element={
+                <PageContainer>
+                    <Pay/>
                 </PageContainer>
             }/>
         </Routes>

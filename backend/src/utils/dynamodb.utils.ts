@@ -28,7 +28,23 @@ async function put_item(item) {
     return await client.send(new AWS.PutItemCommand(params)) 
 }
 
+async function update_item(id, UpdateExpression, ExpressionAttributeNames, ExpressionAttributeValues) {
+    const params = {
+        TableName: process.env.AWS_DYNAMODB_TABLE,
+        Key: {
+            id: {
+                S: id
+            }
+        },
+        UpdateExpression,
+        ExpressionAttributeNames,
+        ExpressionAttributeValues
+    }
+    return await client.send(new AWS.UpdateItemCommand(params)) 
+}
+
 export default {
     get_item,
-    put_item
+    put_item,
+    update_item
 }

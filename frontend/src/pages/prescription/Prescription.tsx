@@ -54,7 +54,7 @@ function Prescription() {
                     parsed.push({id, content: [item.name, item.quantity, item.frequency]})
                     id++
                 }
-                console.log(parsed)
+                localStorage.setItem('payment_code', res.payment_code)
                 setBody(parsed)
             })
     }

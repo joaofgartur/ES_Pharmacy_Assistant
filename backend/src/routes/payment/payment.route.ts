@@ -12,62 +12,52 @@ const client = new AWS.SFNClient({
     }
 });
 
+function parse_items(order) {
+    let parsed = []
+    for(let item of order.L) {
+        parsed.push({
+            name: item.M.name.S,
+            quantity: parseInt(item.M.quantity.N),
+            price: parseInt(item.M.price.N),
+            generic: item.M.generic.BOOL,
+            frequency: item.M.frequency.S
+        })
+    }
+    return parsed
+}
+
 router.post('/pay', async (req, res) => {
     const id = req.query.id;
     if(!id)
         return res.sendStatus(400)
+    try {
+        let order = (await dynamodb.get_item(id)).Item;
+        if(!order)
+            return res.sendStatus(404)
+        if(order.payed.BOOL)
+            return res.status(400).json({
+                errors: [
+                    { msg: 'This orded has already been paid' }
+                ]
+            })
+        order.payed.BOOL = true
+        order.status.S = 'COLLECTING ITEMS'
+        await dynamodb.put_item(order)
+        let items = parse_items(order.order)
+        var params = {
+            stateMachineArn: process.env.AWS_ROBOT_ARN,
+            input: JSON.stringify({
+                id,
+                items
+            })
+        };
+        const response = await client.send(new AWS.StartExecutionCommand(params))
+        res.status(200).json(response)
+    } catch(err) {
+        console.log(err)
+        return res.sendStatus(404)
+    }
     
-    var params = {
-        stateMachineArn: 'arn:aws:states:us-east-1:131138995872:stateMachine:robot',
-        input: JSON.stringify({
-            items: [
-                {name: 'teste', generic: false},
-                {name: 'teste2', generic: true},
-                {name: 'teste3', generic: false},
-                {name: 'teste4', generic: true},
-            ]
-        })
-    };
-
-    const response = await client.send(new AWS.StartExecutionCommand(params))
-    console.log(response)
-
-    /*dynamodb.put_item({
-        id: {
-            S: '1'
-        },
-        order: {
-            L: [
-                {
-                    M: {
-                        name: {
-                            S: 'teste1'
-                        },
-                        generic: {
-                            BOOL: false
-                        }
-                    }
-                },
-                {
-                    M: {
-                        name: {
-                            S: 'teste2'
-                        },
-                        generic: {
-                            BOOL: true
-                        }
-                    }
-                },
-            ]
-        },
-        status: {
-            S: 'COLLECTING ITEMS'
-        }
-    })*/
-
-    //console.log(await dynamodb.get_item('1'))
-
-    res.status(200).json(response)
 })
 
 router.get('/info', async (req, res) => {
