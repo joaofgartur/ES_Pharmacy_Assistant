@@ -27,6 +27,52 @@ function parse_items(order) {
 }
 
 let cache = {}
+
+/**
+ * @openapi
+ * '/payment/pay':
+ *     post:
+ *       summary: Process payment and initiate order collection
+ *       parameters:
+ *         - in: query
+ *           name: id
+ *           schema:
+ *             type: string
+ *           required: true
+ *           description: The ID of the order
+ *       responses:
+ *         '200':
+ *           description: Payment processed and order collection initiated
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   step_function_state:
+ *                      type: object
+ *         '304':
+ *           description: Not Modified
+ *         '400':
+ *           description: Bad request
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   errors:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         msg:
+ *                           type: string
+ *         '404':
+ *           description: Order not found
+ *         '500':
+ *           description: Internal server error
+ *       tags:
+ *         - Payment
+ */
 router.post('/pay', async (req: any, res) => {
     const id = req.query.id;
     if(!id)
@@ -64,6 +110,35 @@ router.post('/pay', async (req: any, res) => {
     }
 })
 
+/**
+ * @openapi
+ * '/payment/info':
+ *     get:
+ *       summary: Get information about a payment
+ *       parameters:
+ *         - in: query
+ *           name: arn
+ *           schema:
+ *             type: string
+ *           required: true
+ *           description: The ARN of the payment
+ *       responses:
+ *         '200':
+ *           description: Information about the payment
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   step_function_state:
+ *                      type: object
+ *         '400':
+ *           description: Bad request
+ *         '500':
+ *           description: Internal server error
+ *       tags:
+ *         - Payment
+ */
 router.get('/info', async (req, res) => {
     const arn = req.query.arn;
     if(!arn)
@@ -83,6 +158,37 @@ router.get('/info', async (req, res) => {
     }
 })
 
+/**
+ * @openapi
+ * '/payment/status':
+ *     get:
+ *       summary: Get the status of a payment
+ *       parameters:
+ *         - in: query
+ *           name: id
+ *           schema:
+ *             type: string
+ *           required: true
+ *           description: The ID of the payment
+ *       responses:
+ *         '200':
+ *           description: Payment status retrieved with success
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   msg:
+ *                     type: string
+ *         '400':
+ *           description: Bad request
+ *         '404':
+ *           description: Order not found
+ *         '500':
+ *           description: Internal server error
+ *       tags:
+ *         - Payment
+ */
 router.get('/status', async (req, res) => {
     const id = req.query.id;
     if(!id)
