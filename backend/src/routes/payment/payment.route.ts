@@ -204,6 +204,51 @@ router.get('/status', async (req, res) => {
     }
 })
 
+/**
+ * @openapi
+ * '/payment/all':
+ *     get:
+ *       summary: Get all sales
+ *       responses:
+ *         '200':
+ *           description: Orders retrieved successfully
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     order:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                         properties:
+ *                           type: array
+ *                           items:
+ *                              type: object
+ *                              properties:
+ *                                  name:
+ *                                      type: string
+ *                                  quantity:
+ *                                      type: integer
+ *                                  price:
+ *                                      type: integer
+ *                                  generic:
+ *                                      type: boolean
+ *                                  frequency:
+ *                                      type: string
+ *                     payed:
+ *                       type: boolean
+ *                     id:
+ *                       type: string
+ *                     status:
+ *                       type: string
+ *         '500':
+ *           description: Internal server error
+ *       tags:
+ *         - Payment
+ */
 router.get('/all', async (req, res) => {
     let items = (await dynamodb.get_items()).Items
     let parsed_items = []
