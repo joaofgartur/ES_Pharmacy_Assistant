@@ -20,6 +20,14 @@ async function get_item(id) {
     return await client.send(new AWS.GetItemCommand(params)) 
 }
 
+async function get_items() {
+    const params = {
+        TableName: process.env.AWS_DYNAMODB_TABLE
+    }
+
+    return await client.send(new AWS.ScanCommand(params))
+}
+
 async function put_item(item) {
     const params = {
         TableName: process.env.AWS_DYNAMODB_TABLE,
@@ -46,5 +54,6 @@ async function update_item(id, UpdateExpression, ExpressionAttributeNames, Expre
 export default {
     get_item,
     put_item,
-    update_item
+    update_item,
+    get_items
 }

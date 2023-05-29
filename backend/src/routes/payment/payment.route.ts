@@ -98,4 +98,18 @@ router.get('/status', async (req, res) => {
     }
 })
 
+router.get('/all', async (req, res) => {
+    let items = (await dynamodb.get_items()).Items
+    let parsed_items = []
+    for(let item of items) {
+        parsed_items.push({
+            order: parse_items(item.order),
+            payed: item.payed.BOOL,
+            id: item.id.S,
+            status: item.status.S
+        })
+    }
+    res.status(200).json(parsed_items)
+})
+
 export default router
