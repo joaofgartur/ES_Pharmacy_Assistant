@@ -14,8 +14,8 @@ function Table(props: ITable) {
             </thead>
             <tbody>
             {
-                props.body.map(row =>
-                    <tr className={"table-row"}>
+                props.body.map((row, index) =>
+                    <tr key={index} className={"table-row"}>
                         {
                             props.checklist_column ? <td><input type="checkbox"/></td> : undefined
                         }

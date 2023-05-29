@@ -15,7 +15,9 @@ function Prescription() {
         header: ["Name", "Quantity", "Dosage"]
     };
 
-    const body: Array<ITableRow> = [
+    const [body, setBody] = useState<ITableRow[]>([])
+
+    /*const body: Array<ITableRow> = [
         { id: 0, content: ['Aspirin', '2 tablets', 'Twice a day'] },
         { id: 1, content: ['Ibuprofen', '1 tablet', 'Every 4 hours'] },
         { id: 2, content: ['Paracetamol', '1 tablet', 'Three times a day'] },
@@ -36,13 +38,33 @@ function Prescription() {
         { id: 17, content: ['Levothyroxine', '1 tablet', 'Once daily'] },
         { id: 18, content: ['Cetirizine', '1 tablet', 'Once daily'] },
         { id: 19, content: ['Gabapentin', '1 capsule', 'Three times a day'] },
-    ];
+    ];*/
+
+    function scanQR() {
+        fetch('http://localhost:3000/qr/scan', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then(res => res.json())
+            .then(res => {
+                let parsed = []
+                let id = 0
+                for(let item of res.purchase) {
+                    parsed.push({id, content: [item.name, item.quantity, item.frequency]})
+                    id++
+                }
+                console.log(parsed)
+                setBody(parsed)
+            })
+    }
 
 
     useEffect(() =>  {
         setClientName("Bill Doors");
         setPhoneNumber("966699444");
         setEmail("billdoors@gmail.com");
+        scanQR()
     }, [])
 
     return(

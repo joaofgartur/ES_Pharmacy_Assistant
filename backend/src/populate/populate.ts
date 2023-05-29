@@ -41,7 +41,8 @@ async function populate() {
         data: {
             name: 'Alexy d\' Almeida',
             email: 'alexy@gmail.com',
-            phone: '911000513'
+            phone: '911000513',
+            photo: ''
         }
     })
 
@@ -49,7 +50,8 @@ async function populate() {
         data: {
             name: 'Samuel Carinhas',
             email: 'samuel@gmail.com',
-            phone: '911000514'
+            phone: '911000514',
+            photo: ''
         }
     })
 
@@ -57,7 +59,8 @@ async function populate() {
         data: {
             name: 'João Artur',
             email: 'joao@gmail.com',
-            phone: '911000515'
+            phone: '911000515',
+            photo: ''
         }
     });
 }

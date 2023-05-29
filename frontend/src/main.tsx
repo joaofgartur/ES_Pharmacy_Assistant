@@ -8,11 +8,28 @@ import Login from "./pages/login/Login.tsx";
 import Prescription from "./pages/prescription/Prescription.tsx";
 import FaceRecognition from "./pages/payment/face-recognition/FaceRecognition.tsx";
 import Sales from "./pages/sales/Sales.tsx";
+import Logout from './pages/logout/Logout.tsx';
+import FaceRecognitionNoCamera from './pages/payment/face-recognition-no-camera/FaceRecognitionNoCamera.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
         <Routes>
+            <Route path={'/logout'} element={
+                <PageContainer>
+                    <Logout />
+                </PageContainer>
+            }></Route>
             <Route path={'/'} element={
+                <PageContainer>
+                    <Home />
+                </PageContainer>
+            }/>
+            <Route path={'/contact'} element={
+                <PageContainer>
+                    <Home />
+                </PageContainer>
+            }/>
+            <Route path={'/about'} element={
                 <PageContainer>
                     <Home />
                 </PageContainer>
@@ -34,7 +51,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             }/>
             <Route path={'/payment/faceid'} element={
                 <PageContainer>
-                    <FaceRecognition/>
+                    <FaceRecognitionNoCamera/>
                 </PageContainer>
             }/>
             <Route path={'/sales'} element={

@@ -14,7 +14,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.341.0",
     "@aws-sdk/client-rekognition": "^3.333.0",
+    "@aws-sdk/client-sfn": "^3.341.0",
     "@prisma/client": "^4.14.0",
     "@types/jsonwebtoken": "^9.0.2",
     "argon2": "^0.30.3",
@@ -30,6 +32,7 @@
     "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.5-lts.1",
     "npm": "^9.6.6",
+    "path": "^0.12.7",
     "uuid": "^9.0.0"
   }
 }

@@ -3,16 +3,26 @@ import NavbarItem from "./item/NavbarItem.tsx";
 import NavbarLogo from "./logo/NavbarLogo.tsx";
 import ButtonA from "../buttons/color-button/ColorButtonA.tsx";
 import ColorButtonB from "../buttons/color-button/ColorButtonB.tsx";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import SimpleButton from "../buttons/simple-button/SimpleButton.tsx";
 import ButtonWithIcon from "../buttons/button-with-icon/ButtonWithIcon.tsx";
+import AccountContext from '../../containers/page/AccountContext.ts';
 
 function Navbar() {
-    const [user , setUser] = useState("");
+    const accountContext = useContext(AccountContext)
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setUser("");
-    }, []);
+        const data = localStorage.getItem('account')
+        console.log(data)
+        if(data)
+            accountContext.setAccount(JSON.parse(data))
+    }, [])
+
+    useEffect(() => {
+        console.log(accountContext.account)
+        setLoaded(true)
+    }, [accountContext.account])
 
     return (
         <div className={"navbar"}>
@@ -23,7 +33,7 @@ function Navbar() {
             </div>
             <div className={"right"}>
                 {
-                    user.length ?
+                    accountContext.account ?
                         <NavbarItem to={"/prescription"} className={""}>
                             <SimpleButton title={"Scan QR"}/>
                         </NavbarItem>
@@ -37,9 +47,9 @@ function Navbar() {
                     <SimpleButton title={"About"}/>
                 </NavbarItem>
                 {
-                    user.length ?
-                        <NavbarItem to={"/user"} className={""}>
-                            <ButtonWithIcon title={user}/>
+                    accountContext.account ?
+                        <NavbarItem to={"/logout"} className={""}>
+                            <ButtonWithIcon title={accountContext.account.email!}/>
                         </NavbarItem>
                         :
                         <NavbarItem to={"/register"} className={""}>
@@ -47,7 +57,7 @@ function Navbar() {
                         </NavbarItem>
                 }
                 {
-                    user.length ?
+                    accountContext.account ?
                         undefined
                         :
                         <NavbarItem to={"/login"} className={""}>

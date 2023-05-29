@@ -1,8 +1,8 @@
 interface IClientDetails {
     name: string;
-    phoneNumber: string;
+    phone: string;
     email: string;
-    photo: string;
+    photo: any;
 }
 
 export default IClientDetails;

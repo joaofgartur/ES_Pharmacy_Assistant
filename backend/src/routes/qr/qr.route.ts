@@ -25,10 +25,10 @@ function get_medicine() {
         { name: 'Atorvastatin', quantity: 1, price: 45, frequency: '1 time a day' }
     ];
 
-    return medicine.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 5))
+    return medicine.sort(() => 0.5 - Math.random()).slice(0, 3 + Math.floor(Math.random() * 5))
 }
 
-router.post('/scan', async (req, res) => {
+router.get('/scan', async (req, res) => {
     return res.status(200).json({
         purchase: get_medicine()
     })

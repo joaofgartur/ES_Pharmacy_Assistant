@@ -43,6 +43,9 @@ function add_face(image, cb) {
 }
 
 async function create_collection() {
+    await client.send(new AWS.DeleteCollectionCommand({
+        CollectionId: process.env.AWS_COLLECTION_ID
+    }))
     const data = await client.send(new AWS.CreateCollectionCommand({
         CollectionId: process.env.AWS_COLLECTION_ID
     }))

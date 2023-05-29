@@ -10,11 +10,13 @@ function AuthContainer(props: IAuthContainer) {
 
     useEffect(() => {
         const data = localStorage.getItem('account')
+        console.log(data)
         if(data)
             accountContext.setAccount(JSON.parse(data))
     }, [])
 
     useEffect(() => {
+        console.log(accountContext.account)
         setLoaded(true)
     }, [accountContext.account])
 

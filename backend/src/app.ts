@@ -10,7 +10,9 @@ import cookieParser from 'cookie-parser'
 import auth_route from './routes/auth/auth.route'
 import qr_route from './routes/qr/qr.route'
 import faces_route from "./routes/faces/faces.route"
+import payment_route from "./routes/payment/payment.route"
 import populate from "./populate/populate";
+import face from './face-recognition/face.recognition'
 
 
 const app = express()
@@ -26,8 +28,8 @@ app.use(cookieParser());
 app.use('/auth', auth_route)
 app.use('/qr', qr_route)
 app.use('/face', faces_route)
+app.use('/payment', payment_route)
 
-//populate()
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
