@@ -2,6 +2,8 @@ import "./Sales.css"
 import ITableHeader from "../../components/table/header/ITableHeader.ts";
 import ITableRow from "../../components/table/row/ITableRow.ts";
 import Table from "../../components/table/Table.tsx";
+import { useContext, useEffect, useState } from "react";
+import AccountContext from "../../containers/page/AccountContext.ts";
 
 const header: ITableHeader = {
     header: ["Sale", "Value", "Delivery Status"]
@@ -31,6 +33,57 @@ const body: Array<ITableRow> = [
 ];
 
 function Sales() {
+    const accountContext = useContext(AccountContext)
+    const [loaded, setLoaded] = useState(false);
+    const [orders, setOrders] = useState<any>([])
+
+    useEffect(() => {
+        const data = localStorage.getItem('account')
+        console.log(data)
+        if(data)
+            accountContext.setAccount(JSON.parse(data))
+    }, [])
+
+    useEffect(() => {
+        console.log(accountContext.account)
+        setLoaded(true)
+    }, [accountContext.account])
+
+    function getOrders() {
+        fetch('http://localhost:3000/payment/all', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accountContext.account!.token}`
+            },
+        }).then(res => res.json())
+            .then(res => {
+                let ords = []
+                for(let order of res) {
+                    let parsed = []
+                    let id = 0
+                    for(let item of order.order) {
+                        parsed.push({id, content: [item.name, item.quantity, item.frequency]})
+                        id++
+                    }
+                    ords.push({
+                        id: order.id,
+                        status: order.status,
+                        payed: order.payed,
+                        items: parsed
+                    })
+                }
+                setOrders(ords)
+            })
+    }
+
+
+    useEffect(() =>  {
+        if(accountContext.account?.token) {
+            getOrders()
+        }
+    }, [loaded])
+
     return(
         <div className={"container"}>
             <div className={"left"}>
@@ -46,9 +99,15 @@ function Sales() {
                 <div className={"title"}>
                     <h2>All sales</h2>
                 </div>
-                <div className={"table-sect"}>
-                    <Table checklist_column={false} header={header} body={body}/>
-                </div>
+                {
+                    orders.map((order: any, index: any) =>
+                    <div key={index} className={"table-sect"}>
+                        <p>Order ID: {order.id}</p>
+                        <p>Order Payed: {order.payed ? 'YES' : 'NO'}</p>
+                        <p>Order Status: {order.status}</p>
+                        <Table checklist_column={false} header={header} body={order.items}/>
+                    </div>)
+                }
             </div>
         </div>
     )
