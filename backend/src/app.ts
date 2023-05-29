@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import cors from 'cors'
-import express from 'express'
+import express, {Request, Response} from 'express'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 
@@ -13,7 +13,9 @@ import faces_route from "./routes/faces/faces.route"
 import payment_route from "./routes/payment/payment.route"
 import populate from "./populate/populate";
 import face from './face-recognition/face.recognition'
+import swaggerDocs, {swaggerSpec} from "./utils/swagger";
 
+// Docs
 
 const app = express()
 const port = 3000
@@ -31,5 +33,6 @@ app.use('/face', faces_route)
 app.use('/payment', payment_route)
 
 app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
+  swaggerDocs(app)
+  return (console.log(`Express is listening at http://localhost:${port}`));
 });

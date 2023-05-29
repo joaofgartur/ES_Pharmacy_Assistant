@@ -8,6 +8,64 @@ const prisma = new PrismaClient()
 
 const router = express.Router()
 
+/**
+ * @openapi
+ * 'face/add':
+ *     post:
+ *       summary: Add client photo
+ *       requestBody:
+ *         required: true
+ *         content:
+ *           multipart/form-data:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 email:
+ *                   type: string
+ *                 file:
+ *                   type: string
+ *                   format: binary
+ *       responses:
+ *         '200':
+ *           description: Client photo added successfully
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   msg:
+ *                     type: string
+ *         '403':
+ *           description: Client or photo not found
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   errors:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         msg:
+ *                           type: string
+ *         '500':
+ *           description: Internal server error
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   errors:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         msg:
+ *                           type: string
+ *       tags:
+ *         - Face Recognition
+ */
 router.post('/add', async (req: any, res) => {
     uploadFile(req, res, async (err) => {
         let user = await prisma.client.findUnique({
@@ -42,6 +100,80 @@ router.post('/add', async (req: any, res) => {
     });
 })
 
+/**
+ * @openapi
+ *   'face/find':
+ *     post:
+ *       summary: Recognize client by photo
+ *       requestBody:
+ *         required: true
+ *         content:
+ *           multipart/form-data:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 file:
+ *                   type: string
+ *                   format: binary
+ *       responses:
+ *         '200':
+ *           description: Client found
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   success:
+ *                     type: boolean
+ *                   client:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                       name:
+ *                         type: string
+ *                       email:
+ *                         type: string
+ *                       phone:
+ *                         type: string
+ *                       photo:
+ *                         type: string
+ *                         format: binary
+ *         '404':
+ *           description: Client not found
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   success:
+ *                     type: boolean
+ *                   errors:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         msg:
+ *                           type: string
+ *         '500':
+ *           description: Internal server error
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   success:
+ *                     type: boolean
+ *                   errors:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         msg:
+ *                           type: string
+ *       tags:
+ *         - Face Recognition
+ */
 router.post('/find', async (req: any, res) => {
     uploadFile(req, res, async (err) => {
         if(err)
@@ -86,6 +218,35 @@ router.post('/find', async (req: any, res) => {
     });
 })
 
+/**
+ * @openapi
+ * 'face/get':
+ *  get:
+ *       summary: Get client
+ *       parameters:
+ *         - in: query
+ *           name: email
+ *           schema:
+ *             type: string
+ *           required: true
+ *           description: Email of the client
+ *       responses:
+ *         '200':
+ *           description: Client photo retrieved with success
+ *           content:
+ *             image/jpeg:
+ *              type: string
+ *              format: binary
+ *             image/png:
+ *              type: string
+ *              format: binary
+ *         '400':
+ *           description: Bad request
+ *         '404':
+ *           description: Client not found
+ *       tags:
+ *         - Face Recognition
+ */
 router.get('/get', async (req, res) => {
     const email = req.query.email;
     if(!email)
