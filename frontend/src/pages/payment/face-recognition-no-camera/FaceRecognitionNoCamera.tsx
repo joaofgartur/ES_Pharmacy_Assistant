@@ -2,7 +2,7 @@ import "./FaceRecognitionNoCamera.css";
 import React, {useContext, useEffect, useState} from "react";
 import {faPhone, faUser} from "@fortawesome/free-solid-svg-icons";
 import IClientDetails from "../../../components/client-details/IClientDetails.ts";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import ClientDetailsItem from "../../../components/client-details/item/ClientDetailsItem.tsx";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import AccountContext from "../../../containers/page/AccountContext.ts";
@@ -21,6 +21,14 @@ function FaceRecognitionNoCamera() {
 
     const accountContext = useContext(AccountContext)
     const [loaded, setLoaded] = useState(false);
+
+    const [searchParams] = useSearchParams()
+    const [paymentCode, setPaymentCode] = useState<string | undefined>(undefined);
+
+    useEffect(() => {
+        const code = searchParams.get('id');
+        setPaymentCode(`${code}`)
+    }, [])
 
     useEffect(() => {
         const data = localStorage.getItem('account')
@@ -110,7 +118,7 @@ function FaceRecognitionNoCamera() {
                                             <ClientDetailsItem data={client.phone} icon={faPhone}/>
                                         </div>
                                         <div className={"controllers"}>
-                                            <Link to={"/sales"}>
+                                            <Link to={`/pay?id=${paymentCode}`}>
                                                 <button className={"color-button-B"}>Confirm</button>
                                             </Link>
                                         </div>

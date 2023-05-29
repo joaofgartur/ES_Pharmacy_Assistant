@@ -12,7 +12,7 @@ function PaymentSelection(params: IPaymentSection) {
         <Popup trigger={<button className="button">Payment</button>} modal>
             <div className={"title"}>Select payment method</div>
             <div className={"payment-methods"}>
-                <Link to={"/payment/faceid"}>
+                <Link to={`/payment/faceid?id=${params.code}`}>
                     <ColorButtonA title={"Face recognition"} />
                 </Link>
                 <Link to={`/pay?id=${params.code}`}>
