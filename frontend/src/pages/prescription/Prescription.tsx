@@ -1,12 +1,28 @@
 import "./Prescription.css"
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import ClientDetails from "../../components/client-details/ClientDetails.tsx";
 import Table from "../../components/table/Table.tsx";
 import ITableHeader from "../../components/table/header/ITableHeader.ts";
 import ITableRow from "../../components/table/row/ITableRow.ts";
 import PaymentSelection from "../../components/pop-ups/payment-selection/PaymentSelection.tsx";
+import AccountContext from "../../containers/page/AccountContext.ts";
 
 function Prescription() {
+    const accountContext = useContext(AccountContext)
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const data = localStorage.getItem('account')
+        console.log(data)
+        if(data)
+            accountContext.setAccount(JSON.parse(data))
+    }, [])
+
+    useEffect(() => {
+        console.log(accountContext.account)
+        setLoaded(true)
+    }, [accountContext.account])
+
     const [clientName, setClientName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -45,7 +61,8 @@ function Prescription() {
         fetch('http://localhost:3000/qr/scan', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accountContext.account!.token}`
             },
         }).then(res => res.json())
             .then(res => {
@@ -62,11 +79,13 @@ function Prescription() {
 
 
     useEffect(() =>  {
-        setClientName("Bill Doors");
-        setPhoneNumber("966699444");
-        setEmail("billdoors@gmail.com");
-        scanQR()
-    }, [])
+        if(accountContext.account?.token) {
+            setClientName("Bill Doors");
+            setPhoneNumber("966699444");
+            setEmail("billdoors@gmail.com");
+            scanQR()
+        }
+    }, [loaded])
 
     return(
         <div className={"prescription"}>

@@ -1,5 +1,5 @@
 interface IAccount {
-    jwt: string | undefined,
+    token: string | undefined,
     email: string | undefined
 }
 

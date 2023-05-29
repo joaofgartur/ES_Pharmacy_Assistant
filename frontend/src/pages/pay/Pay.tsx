@@ -8,6 +8,20 @@ import AccountContext from "../../containers/page/AccountContext.ts";
 function Pay() {
 
     const accountContext = useContext(AccountContext)
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const data = localStorage.getItem('account')
+        console.log(data)
+        if(data)
+            accountContext.setAccount(JSON.parse(data))
+    }, [])
+
+    useEffect(() => {
+        console.log(accountContext.account)
+        setLoaded(true)
+    }, [accountContext.account])
+
     const [paymentCode, setPaymentCode] = useState<string | undefined>(undefined);
     const [status, setStatus] = useState('')
     const [searchParams] = useSearchParams()
@@ -23,7 +37,8 @@ function Pay() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'uuid': accountContext.account?.email!
+                'uuid': accountContext.account?.email!,
+                Authorization: `Bearer ${accountContext.account!.token}`
             }
         }).then(res => res.json())
         .then(res => {
@@ -31,7 +46,11 @@ function Pay() {
         })
 
         const id = setInterval(() => {
-            fetch(`http://localhost:3000/payment/status?id=${paymentCode}`)
+            fetch(`http://localhost:3000/payment/status?id=${paymentCode}`, {
+                headers: {
+                    Authorization: `Bearer ${accountContext.account!.token}`
+                }
+            })
             .then(res => res.json())
             .then(res => {
                 setStatus(res.msg)

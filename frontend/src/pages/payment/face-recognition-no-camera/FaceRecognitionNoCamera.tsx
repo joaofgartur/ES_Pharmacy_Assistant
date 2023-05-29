@@ -1,10 +1,11 @@
 import "./FaceRecognitionNoCamera.css";
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {faPhone, faUser} from "@fortawesome/free-solid-svg-icons";
 import IClientDetails from "../../../components/client-details/IClientDetails.ts";
 import {Link} from "react-router-dom";
 import ClientDetailsItem from "../../../components/client-details/item/ClientDetailsItem.tsx";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
+import AccountContext from "../../../containers/page/AccountContext.ts";
 
 const initialClient: IClientDetails = {
     name: "",
@@ -18,6 +19,21 @@ function FaceRecognitionNoCamera() {
     const [image, setImage] = useState<File | undefined>(undefined);
     const [clientImage, setClientImage] = useState<Blob>()
 
+    const accountContext = useContext(AccountContext)
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const data = localStorage.getItem('account')
+        console.log(data)
+        if(data)
+            accountContext.setAccount(JSON.parse(data))
+    }, [])
+
+    useEffect(() => {
+        console.log(accountContext.account)
+        setLoaded(true)
+    }, [accountContext.account])
+
     useEffect(() => {
         if(!image) return;
 
@@ -26,6 +42,9 @@ function FaceRecognitionNoCamera() {
 
         fetch('http://localhost:3000/face/find', {
             method: 'POST',
+            headers: {
+                Authorization: `Bearer ${accountContext.account!.token}`
+            },
             body: formData
         }).then(res => {
             if(res.status !== 200)
@@ -45,7 +64,11 @@ function FaceRecognitionNoCamera() {
 
     useEffect(() => {
         if(!client.email) return
-        fetch(`http://localhost:3000/face/get?email=${client.email}`)
+        fetch(`http://localhost:3000/face/get?email=${client.email}`, {
+            headers: {
+                Authorization: `Bearer ${accountContext.account!.token}`
+            }
+        })
         .then(r => r.blob())
         .then(r => {
             setClientImage(r)
