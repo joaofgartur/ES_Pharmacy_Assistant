@@ -8,6 +8,55 @@ import LoginDTO from "./auth.dto"
 const router = express.Router()
 const prisma = new PrismaClient()
 
+/**
+ * @openapi
+ * 'auth/login':
+ *  post:
+ *   summary: User login
+ *   requestBody:
+ *    required: true
+ *    content:
+ *     application/json:
+ *      schema:
+ *       type: object
+ *       properties:
+ *        email:
+ *         type: string
+ *        password:
+ *         type: string
+ *   responses:
+ *    '200':
+ *     description: Successful Login
+ *     content:
+ *      application/json:
+ *        schema:
+ *         type: object
+ *         properties:
+ *          success:
+ *           type: boolean
+ *          email:
+ *           type: string
+ *          token:
+ *           type: string
+ *    '401':
+ *     description: Invalid credentials
+ *     content:
+ *      application/json:
+ *       schema:
+ *        type: object
+ *        properties:
+ *         success:
+ *          type: boolean
+ *         errors:
+ *          type: array
+ *         items:
+ *          type: object
+ *          properties:
+ *           msg:
+ *            type: string
+ *   tags:
+ *    - Authentication
+ */
 router.post('/login', validationMiddleware(LoginDTO), async (req, res) => {
     let login: LoginDTO = res.locals.transformedClass
 
@@ -20,7 +69,7 @@ router.post('/login', validationMiddleware(LoginDTO), async (req, res) => {
     let authorized = !user ? false : await argon2.verify(user.password, login.password)
 
     if(!authorized)
-        return res.status(200).json({
+        return res.status(401).json({
             success: false,
             errors: [
                 {
