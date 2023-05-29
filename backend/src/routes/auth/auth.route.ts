@@ -1,4 +1,5 @@
 import express from 'express'
+import passport from 'passport'
 import jsonwebtoken from 'jsonwebtoken'
 import { validationMiddleware } from "../../middlewares/validation.middleware"
 import { PrismaClient } from '@prisma/client'
@@ -57,34 +58,30 @@ const prisma = new PrismaClient()
  *   tags:
  *    - Authentication
  */
-router.post('/login', validationMiddleware(LoginDTO), async (req, res) => {
+router.post('/login', validationMiddleware(LoginDTO), async (req: any, res) => {
     let login: LoginDTO = res.locals.transformedClass
 
-    let user = await prisma.account.findUnique({
-        where: {
-            email: login.email
-        }
-    });
+    passport.authenticate('local', { session: false }, (err, user, info) => {
+        if(err || !user)
+            return res.status(400).json(info);
 
-    let authorized = !user ? false : await argon2.verify(user.password, login.password)
+        req.login(user, { session: false }, (err) => {
+            if(err)
+                return res.status(500).json({
+                    success: false,
+                    errors: [ { msg: err } ]
+                })
 
-    if(!authorized)
-        return res.status(401).json({
-            success: false,
-            errors: [
-                {
-                    msg: 'Invalid credentials'
-                }
-            ]
+            return res.status(200).json({
+                success: true,
+                email: login.email,
+                token: jsonwebtoken.sign({ email: user.email }, process.env.JWT_SECRET),
+            })
         })
+    })(req, res);
 
-    let token = jsonwebtoken.sign({ email: user.email }, process.env.JWT_SECRET)
-
-    res.status(200).json({
-        success: true,
-        email: login.email,
-        token
-    })
+    
+    
 })
 
 export default router
