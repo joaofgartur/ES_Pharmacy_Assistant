@@ -31,6 +31,41 @@ function get_medicine() {
     return medicine.sort(() => 0.5 - Math.random()).slice(0, 3 + Math.floor(Math.random() * 5))
 }
 
+/**
+ * @openapi
+ * '/qr/scan':
+ *     get:
+ *       summary: Scan a QR code
+ *       responses:
+ *         '200':
+ *           description: Scan successful
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   purchase:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         name:
+ *                           type: string
+ *                         quantity:
+ *                           type: number
+ *                         price:
+ *                           type: number
+ *                         frequency:
+ *                           type: string
+ *                         generic:
+ *                           type: boolean
+ *                   payment_code:
+ *                     type: string
+ *         '500':
+ *           description: Internal server error
+ *       tags:
+ *         - QR code
+ */
 router.get('/scan', async (req, res) => {
     const medicine = get_medicine()
     let parsed_medicine = []
