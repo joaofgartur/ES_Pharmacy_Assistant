@@ -40,12 +40,12 @@ function Navbar() {
                         :
                         undefined
                 }
-                <NavbarItem to={"/contact"} className={""}>
-                    <SimpleButton title={"Contact"}/>
-                </NavbarItem>
-                <NavbarItem to={"/about"} className={""}>
-                    <SimpleButton title={"About"}/>
-                </NavbarItem>
+                {
+                    accountContext.account &&
+                    <NavbarItem to={"/sales"} className={""}>
+                        <SimpleButton title={"Sales"}/>
+                    </NavbarItem>
+                }
                 {
                     accountContext.account ?
                         <NavbarItem to={"/logout"} className={""}>

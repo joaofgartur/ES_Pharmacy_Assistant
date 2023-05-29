@@ -28,12 +28,12 @@ function parse_items(order) {
 
 let cache = {}
 router.post('/pay', async (req: any, res) => {
-    if (cache[req.headers['uuid']]) {
-        return res.status(304).send('Not Modified');
-    }
     const id = req.query.id;
     if(!id)
-        return res.sendStatus(400)
+    return res.sendStatus(400)
+    if (cache[`${req.headers['uuid']}:${req.query.id}`]) {
+        return res.status(304).send('Not Modified');
+    }
     try {
         let order = (await dynamodb.get_item(id)).Item;
         if(!order)
@@ -41,7 +41,7 @@ router.post('/pay', async (req: any, res) => {
         if(order.payed.BOOL)
             return res.status(400).json({
                 errors: [
-                    { msg: 'This orded has already been paid' }
+                    { msg: 'This order has already been paid' }
                 ]
             })
         order.payed.BOOL = true
@@ -56,7 +56,7 @@ router.post('/pay', async (req: any, res) => {
             })
         };
         const response = await client.send(new AWS.StartExecutionCommand(params))
-        cache[req.headers['uuid']] = response;
+        cache[`${req.headers['uuid']}:${req.query.id}`] = response;
         res.status(200).json(response)
     } catch(err) {
         console.log(err)

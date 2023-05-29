@@ -60,7 +60,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                     <Sales/>
                 </PageContainer>
             }/>
-            <Route path={'/pay/*'} element={
+            <Route path={'/pay'} element={
                 <PageContainer>
                     <Pay/>
                 </PageContainer>

@@ -10,6 +10,7 @@ function Prescription() {
     const [clientName, setClientName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
+    const [code, setCode] = useState('')
 
     const header: ITableHeader = {
         header: ["Name", "Quantity", "Dosage"]
@@ -54,7 +55,7 @@ function Prescription() {
                     parsed.push({id, content: [item.name, item.quantity, item.frequency]})
                     id++
                 }
-                localStorage.setItem('payment_code', res.payment_code)
+                setCode(res.payment_code)
                 setBody(parsed)
             })
     }
@@ -84,7 +85,7 @@ function Prescription() {
                         </div>
                     </div>
                     <div className={"button-sect"}>
-                        <PaymentSelection/>
+                        <PaymentSelection code={code}/>
                     </div>
                 </div>
             </div>
