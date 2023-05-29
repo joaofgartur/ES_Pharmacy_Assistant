@@ -26,7 +26,11 @@ function parse_items(order) {
     return parsed
 }
 
-router.post('/pay', async (req, res) => {
+let cache = {}
+router.post('/pay', async (req: any, res) => {
+    if (cache[req.headers['uuid']]) {
+        return res.status(304).send('Not Modified');
+    }
     const id = req.query.id;
     if(!id)
         return res.sendStatus(400)
@@ -52,12 +56,12 @@ router.post('/pay', async (req, res) => {
             })
         };
         const response = await client.send(new AWS.StartExecutionCommand(params))
+        cache[req.headers['uuid']] = response;
         res.status(200).json(response)
     } catch(err) {
         console.log(err)
         return res.sendStatus(404)
     }
-    
 })
 
 router.get('/info', async (req, res) => {
@@ -76,6 +80,21 @@ router.get('/info', async (req, res) => {
         res.status(200).json(response)
     } catch(err) {
         res.sendStatus(500)
+    }
+})
+
+router.get('/status', async (req, res) => {
+    const id = req.query.id;
+    if(!id)
+        return res.sendStatus(400)
+    try {
+        let order = (await dynamodb.get_item(id)).Item;
+        if(!order)
+            return res.sendStatus(404)
+        res.status(200).json({msg: order.status.S})
+    } catch(err) {
+        console.log(err)
+        return res.sendStatus(404)
     }
 })
 
