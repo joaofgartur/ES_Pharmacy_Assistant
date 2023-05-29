@@ -1,6 +1,6 @@
 import "./AuthForm.css"
 import IForm from "./IForm.ts";
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {faLock} from "@fortawesome/free-solid-svg-icons";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
@@ -11,6 +11,7 @@ import AccountContext from "../../containers/page/AccountContext.ts";
 function AuthForm(props: IForm) {
     const navigate = useNavigate()
     const accountContext = useContext(AccountContext)
+    const [error, setError] = useState(false)
 
     function loginPost(email: string, password: string) {
         fetch('http://localhost:3000/auth/login', {
@@ -22,7 +23,12 @@ function AuthForm(props: IForm) {
                 email,
                 password
             })
-        }).then(res => res.json())
+        }).then(res => {
+            if(res.status !== 200) {
+                setError(true)
+            }
+            return res.json()
+        })
             .then(res => {
                 console.log(res)
                 if(res.success) {
@@ -91,6 +97,12 @@ function AuthForm(props: IForm) {
                             <FormItem title={"Email"} input_type={"email"} placeholder={"Email"} name={"email"} icon={faEnvelope}/>
                             <FormItem title={"Password"} input_type={"password"} placeholder={"Password"} name={"password"} icon={faLock}/>
                         </div>
+                        {
+                            error &&
+                            <div className={"errors"}>
+                                Invalid credentials
+                            </div>
+                        }
                         <button className={"button"}>Sign In</button>
                     </form>
             }

@@ -55,6 +55,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                     <FaceRecognitionNoCamera/>
                 </PageContainer>
             }/>
+            <Route path={'/payment/cam_faceid'} element={
+                <PageContainer>
+                    <FaceRecognition/>
+                </PageContainer>
+            }/>
             <Route path={'/sales'} element={
                 <PageContainer>
                     <Sales/>
